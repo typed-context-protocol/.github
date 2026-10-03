@@ -39,4 +39,5 @@ observatron/
 
 ## !~Resources
 [W3C Typed Context Protocol Community Group Python Notebook - tcxp:// Typed ConteXt Protocol](https://www.w3.org/community/typed-context-protocol/)
+[https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
 
