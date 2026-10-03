@@ -24,11 +24,12 @@ observatron/
           |-Environment //a message to the reader of this data, to help them with their deceision, if relevant
       |-reason
         |-reasoning-cards[]
-          |-[]
-            |
-            
+          |-core[]
       |-decide
-      |-trace
+        |-essential[]
+        |-inert[]
+        |-governor[]
+      |-trace[]
 
 ## Protocol
 - `tcxp://` is a network address
@@ -37,7 +38,7 @@ observatron/
 - `@tcxp.set({position-start,position-end,string}) is a prefix to edit the character position in a URI, an operation on the **in-memory URI String** allowing updates
 - `@tcxp.match({string-1, string-2, result}) // this would result in the URI updating state so &string1=<string1>&string2=<string2>&result=<result>  ← this is what updates in real time in the URI to show state
 
-## !~Resources
-[W3C Typed Context Protocol Community Group Python Notebook - tcxp:// Typed ConteXt Protocol](https://www.w3.org/community/typed-context-protocol/)
-[https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
+## Resources
+- [W3C Typed Context Protocol Community Group Python Notebook - tcxp:// Typed ConteXt Protocol](https://www.w3.org/community/typed-context-protocol/)
+- [https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
 
