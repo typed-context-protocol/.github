@@ -1,12 +1,12 @@
-# W3C Context Graphs Community Group Charter
+# W3C Typed Context Protocol Community Group Charter
 
-**Version 2.0 — Release candidate** · **Date:** 18 August 2026 · **Chair:** Ron Itelman
+**Version 2.0 — Release candidate** · **Date:** October 5th, 2026 · **Chair:** Ron Itelman
 
 ## 1. Mission
 
-The mission of the W3C Context Graphs Community Group is to develop specifications, vocabularies, implementation guidance, and best practices for making the contextual conditions under which data, messages, and other artifacts are interpreted at declared boundaries referable, measurable, comparable, routable, and auditable across people and systems.
+The mission of the W3CTyped Context Protocol Community Group is to develop specifications, vocabularies, implementation guidance, and best practices for making the contextual conditions under which data, messages, and other artifacts are interpreted at declared boundaries referable, measurable, comparable, routable, and auditable across people and systems.
 
-The group's primary technical program is the **Context Graph Protocol (CGP)**: a protocol for observing communication events at declared boundaries, making relevant conditions of interpretation referable, comparing an immediate sender's intent with a reader's interpretation, and routing the measured state to an explicit response before or during downstream action.
+The group's primary technical program is the **Typed Context Protocol (tcxp)**: a protocol for observing communication events at declared boundaries, making relevant conditions of interpretation referable, comparing an immediate sender's intent with a reader's interpretation, and routing the measured state to an explicit response before or during downstream action.
 
 The group seeks to enable independent human and machine participants to:
 
@@ -23,7 +23,7 @@ The protocol is intended to complement, not replace, existing ontologies, knowle
 
 Organizations and technical ecosystems are federated. Their participants commonly use different definitions, schemas, reference data, policies, timeframes, operating assumptions, and local knowledge. Each participant may be internally consistent while a handoff between participants remains open to incompatible interpretations.
 
-When information crosses a boundary without the references needed to evaluate its interpretation, a receiving participant may silently substitute local assumptions. When a required `Context Facet` lacks resolving evidence at a declared crossing, CGP records that facet as `DARK`.
+When information crosses a boundary without the references needed to evaluate its interpretation, a receiving participant may silently substitute local assumptions. When a required `Context Facet` lacks resolving evidence at a declared crossing, tcxp records that facet as `DARK`.
 
 `DARK` identifies a measurable absence of resolving evidence. It does not establish that a misinterpretation occurred; it establishes that fidelity between the immediate sender’s intent and the current reader’s interpretation cannot yet be verified at that crossing. `Dark Context` is the resulting unresolved state across the facets and crossings selected for observation.
 
@@ -35,7 +35,7 @@ This charter governs the Community Group's mission, scope, deliverables, and ope
 
 For the current alpha, the [https://colab.research.google.com/drive/1CTU0u-NWXMJkj5kWBni9U7xdZo4IyFjF?usp=sharing](https://colab.research.google.com/drive/1CTU0u-NWXMJkj5kWBni9U7xdZo4IyFjF?usp=sharing) is the authoritative technical reference for protocol terms, executable examples, and demonstrated behavior. A future Community Group Report may supersede the notebook through the decision process in this charter.
 
-The earlier [Context Graph Protocol Draft v0.1](https://github.com/W3C-Context-Graph-Community-Group/Charter/blob/main/Context-Graph-Protocol-draft-v0.1.md) is retained as a historical implementation reference. It is deprecated and non-normative. In particular, its use of `Context` as the third non-data facet (the fourth facet overall) has been superseded by `World` in the Notebook Alpha.
+The earlier [Typed Context Protocol Draft v0.1](https://github.com/W3C-Context-Graph-Community-Group/Charter/blob/main/Context-Graph-Protocol-draft-v0.1.md) is retained as a historical implementation reference. It is deprecated and non-normative. In particular, its use of `Context` as the third non-data facet (the fourth facet overall) has been superseded by `World` in the Notebook Alpha.
 
 ## 4. Protocol Model at a Glance
 
@@ -54,9 +54,9 @@ A `Spike` contains four facets:
 | `Structure` | How is the Data encoded, organized, generated, filtered, or validated? | schema version; date format; parser; rounding rule; constraint | API Engineers / Software Developers |
 | `World` | To what external entity, event, population, place, time, authority, or situation does the Data refer? | a vessel; a jurisdiction; fiscal year 2026; an applicable policy version | Domain Experts |
 
-A key operational benefit of **`CGP`**—short for the Context Graph Protocol—is that the contextual requirements contributed by different communities can be represented in one bundled data product rather than fragmented across separate artifacts.
+A key operational benefit of **`tcxp`**—short for theTyped Context Protocol Protocol—is that the contextual requirements contributed by different communities can be represented in one bundled data product rather than fragmented across separate artifacts.
 
-At the gauge layer, CGP is scale-invariant and computationally cheap by design:
+At the gauge layer, tcxp is scale-invariant and computationally cheap by design:
 
 - every observed Spike has the same fixed structure: Data, Meaning, Structure, and World;
 - each observation adds exactly three measurable Context Facet positions;
@@ -69,8 +69,8 @@ At the gauge layer, CGP is scale-invariant and computationally cheap by design:
 
 `Data` is present by observation: a `Spike` exists because Data crossed the boundary. `Meaning`, `Structure`, and `World` are the three **Context Facets** that can be `DARK` or `LIT`.
 
-- A Context Facet is `DARK` when it carries no resolving `cgvu:` referent at the observed crossing.
-- A Context Facet is `LIT` when it carries a resolving `cgvu:` referent.
+- A Context Facet is `DARK` when it carries no resolving `!tcxp:` referent at the observed crossing.
+- A Context Facet is `LIT` when it carries a resolving `!tcxp:` referent.
 - `LIT` does not imply agreement. When the immediate sender and current reader expose comparable referents, the gauge can report `MATCH` or `NO MATCH`.
 - A `DARK` facet may happen to be interpreted correctly, but the protocol lacks the evidence needed to verify fidelity at that crossing.
 
@@ -116,11 +116,11 @@ The Community Group may develop and evaluate:
 1. **Core data model and vocabulary.** A model for boundary interactions, Spikes, the four facets, Context State, Dark/Lit status, Match/No Match comparisons, answer spaces, decisions, routes, handlers, certificates, and traces.
 2. **Intent Map format.** A declarative, machine-consumable way to specify observation rules, finite candidate answer spaces, required facets, policies, and routing behavior.
 3. **Governor and routing behavior.** Testable rules for `ACT`, `ASK`, and `HALT`, including Decidability Gate behavior, addressable routes, resolution handling, and halt witnesses.
-4. **Addressing and serialization.** Interoperable identifiers, schemas, serialization formats, registries, and APIs for protocol artifacts, including experimental `cgp:` and `cgvu:` address spaces.
+4. **Addressing and serialization.** Interoperable identifiers, schemas, serialization formats, registries, and APIs for protocol artifacts, including experimental `tcxp:` and `!tcxp:` address spaces.
 5. **Decision and resolution traces.** Formats for recording what was observed, compared, inferred, asked, confirmed, routed, and decided, with appropriate provenance.
 6. **Composition across boundaries.** Methods for evaluating Context across loops, joins, chains, networks of Observatrons, and shared resolution records without silently propagating an interpretation.
 7. **Measurement and benchmarking.** Reproducible measures of Dark Context, contextual alignment, decision relevance, resolution cost, regret, value of information, and related outcomes under explicitly declared assumptions.
-8. **Interoperability mappings.** Guidance for using CGP with existing semantic, schema, provenance, policy, data-management, and agent technologies.
+8. **Interoperability mappings.** Guidance for using tcxp with existing semantic, schema, provenance, policy, data-management, and agent technologies.
 9. **Security, privacy, and human oversight.** Requirements and patterns for data minimization, consent, provenance, access control, retention, PII handling, safe stopping, and user confirmation in Context-aware systems.
 10. **Use cases, implementation experience, and formalization.** Public use cases, reference implementations, conformance tests, finite executable witnesses, and candidate formal proofs.
 
@@ -145,8 +145,8 @@ The group's work should follow these principles:
 
 The Community Group intends to produce the following public work products, one or more of which may be published as W3C Community Group Reports:
 
-1. **Context Graph Protocol Alpha Specification** — the core vocabulary, lifecycle, state model, routing model, and conformance requirements aligned with the Notebook Alpha.
-2. **Benchmarking White Paper** — an evidence-based report integrating committee work and evaluating CGP against relevant baseline approaches. Initial work will include a tax-preparation-services knowledge-task problem space and declared measures of cost, accuracy, quality, and the compounding effects of broken Context.
+1. **Typed Context Protocol Alpha Specification** — the core vocabulary, lifecycle, state model, routing model, and conformance requirements aligned with the Notebook Alpha.
+2. **Benchmarking White Paper** — an evidence-based report integrating committee work and evaluating tcxp against relevant baseline approaches. Initial work will include a tax-preparation-services knowledge-task problem space and declared measures of cost, accuracy, quality, and the compounding effects of broken Context.
    
 The Group Chair serves as lead editor for an integrated white paper and transition materials, with contributor attribution and publication subject to this charter, the applicable decision process, and W3C requirements. Steering Committees and participants may also publish separate materials consistent with the applicable contribution and licensing rules.
 
@@ -176,7 +176,7 @@ The initial committee portfolio is:
 | --- | --- | --- |
 | **Semantic Automata** | Develop alpha specification and reference-implementation work for machine-to-machine communication that preserves and exposes relevant Context Facets; investigate formal-language and related techniques for protocol state and routing. | Indranil Mukhopadhyay |
 | **Applied Knowledge** | Develop user-centered measures and benchmarks for contextual alignment, missing information, decision impact, and reliance calibration over time. | Audrey Depeige |
-| **Agentic Engineering** | Apply CGP across application layers and agent interactions, including PII detection and routing across backend artifacts, frontend inputs, and model outputs. | Alex Brown |
+| **Agentic Engineering** | Apply tcxp across application layers and agent interactions, including PII detection and routing across backend artifacts, frontend inputs, and model outputs. | Alex Brown |
 | **Serialization & Specification** | Develop clear, implementable serializations, schemas, APIs, conformance language, and high-quality protocol documentation. | Juan Cruz Viotti |
 | **Business & Finance** | Supply real-world business problems, usage scenarios, benchmarks, and success criteria, including inputs to the integrated white paper. | Ajay Wanchoo |
 | **Explainability** | Define how systems present relevant facets, evidence, assumptions, routes, and operational consequences so that people can understand and review Context-aware decisions. | Michael Barnett |
@@ -198,13 +198,13 @@ Participation is open to anyone under the W3C Community Group process; W3C membe
 
 No participant is required to join a Steering Committee to contribute to the group.
 
-As the group evolves, we will be actively working to integrate community-driven efforts to develop CGP into a working group.
+As the group evolves, we will be actively working to integrate community-driven efforts to develop tcxp into a working group.
 
 ## 9. Learning by Building and Staying Aligned
 
 The group will learn through open discussion, executable demonstrations, implementation experience, and evidence from use. It will avoid adding process merely to anticipate situations that have not occurred. Additional operating practices may be introduced when experience shows they are needed.
 
-Participants are encouraged to take CGP into new domains and to propose new research, specifications, implementations, and collaborations. To help the group remain aligned, each substantial effort should be able to answer four questions:
+Participants are encouraged to take tcxp into new domains and to propose new research, specifications, implementations, and collaborations. To help the group remain aligned, each substantial effort should be able to answer four questions:
 
 1. What contextual-misalignment problem does this work address?
 2. How does it use, extend, or explicitly challenge the shared foundation?
