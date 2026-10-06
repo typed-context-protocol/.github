@@ -39,6 +39,7 @@ observatron/
 - `@tcxp.match({string-1, string-2, result}) // this would result in the URI updating state so &string1=<string1>&string2=<string2>&result=<result>  ← this is what updates in real time in the URI to show state
 
 ## Resources
-- [W3C Typed Context Protocol Community Group Python Notebook - tcxp:// Typed ConteXt Protocol](https://www.w3.org/community/typed-context-protocol/)
+- [W3C Typed Context Protocol Community Group](https://www.w3.org/community/typed-context-protocol/)
 - [https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
+- [Python notebook code examples](https://github.com/typed-context-protocol/charter/blob/main/typed-context-protocol-1.ipynb)
 
