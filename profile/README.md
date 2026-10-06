@@ -21,7 +21,7 @@ observatron/
         |-spikes[] // each observation spikes Context Facets
           |-Data //the anchor facet, what was sensed
           |-Structure //schema, constraints, validation, generator for simulators of environments and itself
-          |-Environment //a message to the reader of this data, to help them with their deceision, if relevant
+          |-Environment //a message to the reader of this data, to help them with their decision, if relevant
       |-reason
         |-reasoning-cards[]
           |-core[]
