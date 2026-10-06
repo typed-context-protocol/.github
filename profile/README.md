@@ -34,9 +34,7 @@ observatron/
 ## Protocol
 - `tcxp://` is a network address
 - `!tcxp:/` is **NOT** a network address, but an **in-memory address**
-- `@tcxp.get({position-start,position-end}) is a prefix to retrieve the character position in a URI, this is an operation against the **in-memory URI**
-- `@tcxp.set({position-start,position-end,string}) is a prefix to edit the character position in a URI, an operation on the **in-memory URI String** allowing updates
-- `@tcxp.match({string-1, string-2, result}) // this would result in the URI updating state so &string1=<string1>&string2=<string2>&result=<result>  ← this is what updates in real time in the URI to show state
+
 
 ## Resources
 - [W3C Typed Context Protocol Community Group](https://www.w3.org/community/typed-context-protocol/)
