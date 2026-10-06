@@ -11,7 +11,7 @@ The purpose of a Typed Context Object is that *Context* has mathematical guarant
 - *`FAILURE:`* A known error that can be fixed in a pipeline
 - *`UNCERTAINTY UNAWARENESS:`* Becase `yesterday` could be interpreted in multiple ways, and has no error in the return, anything downstream that trusts the info will be unaware whether it is right or wrong, and that is simply a propability given the possible choices which may or may not be mapped out.
 
-
+```text
 observatron/
   |- context-object
       |-observe
@@ -30,6 +30,7 @@ observatron/
         |-inert[]
         |-governor[]
       |-trace[]
+```
 
 ## Protocol
 - `tcxp://` is a network address
