@@ -1,6 +1,6 @@
 # Typed Context Protocol, a W3C Community Group
 
-**Draft of Specification (in progress, not yet reported)**
+**Specification (Draft Community Group Report, in progress)**
 - [https://typed-context-protocol.github.io/specification/](https://typed-context-protocol.github.io/specification/)
 
 **W3C Community Group Home Page**
@@ -9,7 +9,7 @@
 **Charter**:
 - [https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
 
-**Notebook Example**
+**Notebook Example (in progress)**
 - [Python notebook code examples](https://github.com/typed-context-protocol/charter/blob/main/typed-context-protocol-1.ipynb)
 
 ## Introducing the Typed Context Object
@@ -20,7 +20,8 @@ The purpose of a Typed Context Object is that *Context* has mathematical guarant
 
 ## Why a Protocol and File Format
 
-A universal approach to calibrating ground truth to observations in decision-making requires the ability to encode Typed Context Object both in static documents and dynamic communication streams. TCXP as a protocol is referenced as tcxp://, TCXP as a file format is referenced as .tcxp.
+A universal approach to calibrating ground truth to observations in decision-making requires the ability to encode Typed Context Object both in static documents and dynamic communication streams. As a protocol, tcxp is written as tcxp: addresses; as a file format, it is a .tcxp document
 
-- TCXP is currently registered as a provisional URI scheme at: [https://www.iana.org/assignments/uri-schemes](https://www.iana.org/assignments/uri-schemes)
-- .tcxp as a file format application is currently under application preparations.
+- TCXP is registered as a provisional URI scheme at: [https://www.iana.org/assignments/uri-schemes](https://www.iana.org/assignments/uri-schemes)
+- The media type text/tcxp, for .tcxp documents, is being requested through W3C
+
