@@ -10,7 +10,7 @@
 - [https://github.com/typed-context-protocol/charter](https://github.com/typed-context-protocol/charter)
 
 **Notebook Example (in progress)**
-- [Python notebook code examples](https://github.com/typed-context-protocol/charter/blob/main/typed-context-protocol-1.ipynb)
+- [https://gist.github.com/RonItelman/c6284e385dd21964896f89135b005ab1](https://gist.github.com/RonItelman/c6284e385dd21964896f89135b005ab1)
 
 ## Introducing the Typed Context Object
 
