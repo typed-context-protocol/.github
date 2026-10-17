@@ -25,3 +25,5 @@ A universal approach to calibrating ground truth to observations in decision-mak
 - TCXP is registered as a provisional URI scheme at: [https://www.iana.org/assignments/uri-schemes](https://www.iana.org/assignments/uri-schemes)
 - The media type text/tcxp, for .tcxp documents, is being requested through W3C
 
+## Name Change: From "Context Graph" to "Typed Context Protocol"
+The previous group name was "Context Graph" Community Group. The name change was due to industry overlap in terminology, where Knowledge Graphs and Ontologies were becoming a more popular term to describe Context. The Typed Context Protocol takes a significantly different approach, and a distinct name became important to highlight the difference.
